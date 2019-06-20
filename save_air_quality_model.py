@@ -9,8 +9,10 @@ import sys
 import pandas as pd
 import numpy as np
 
-module_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'my_models', 'code', 'air_quality')
+# module_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'my_models', 'code', 'air_quality')
 # module_path = './my_models/code/air_quality'
+# module_path = '/home/vassilis/Documents/EWZ/mlflow-trial/my_models/code/air_quality'
+module_path = 'my_models/code/air_quality'
 
 print()
 print('loading model code from folder: ', module_path)
@@ -19,6 +21,7 @@ print()
 if module_path not in sys.path:
     sys.path.append(module_path)
 from AirQuality import AirQuality
+# import AirQuality.AirQuality
     
 import mlflow
 
@@ -34,4 +37,4 @@ if __name__ == "__main__":
     with mlflow.start_run():
         aq = AirQuality()
 
-        mlflow.pyfunc.save_model(path=model_save_path, python_model=aq)
+        mlflow.pyfunc.save_model(path=model_save_path, python_model=aq, conda_env='conda.yaml', code_path=[module_path+'/AirQuality.py'])

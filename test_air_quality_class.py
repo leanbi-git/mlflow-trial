@@ -40,7 +40,7 @@ if __name__ == "__main__":
     with mlflow.start_run():
         aq = AirQuality()
 
-        predicted_qualities = aq.predict(data)
+        predicted_qualities = aq.predict(None, data)
 
         (percent_good, percent_acceptable) = eval_metrics(predicted_qualities)
 

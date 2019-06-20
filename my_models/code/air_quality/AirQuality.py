@@ -38,7 +38,8 @@ class AirQuality(mlflow.pyfunc.PythonModel):
     def air_quality_acceptable(self, measurements_df):
         return _is_in_polygon_2D(measurements_df, self.vertices_acceptable_air_quality)
 
-    def predict(self, model_input_df):
+    # Use None instead of context
+    def predict(self, context, model_input_df):
         print('Evaluating air quality')
         input_data = model_input_df.loc[:, ['temperature', 'humidity']].values
         is_good = self.air_quality_good(input_data)
