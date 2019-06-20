@@ -27,7 +27,7 @@ if __name__ == "__main__":
     np.random.seed(0)
 
     # Read the wine-quality csv file (make sure you're running this from the root of MLflow!)
-    model_save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'my_models', 'air_quality')
+    model_save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'my_models', 'saved_models', 'air_quality')
     
     print('saving model in folder: ', model_save_path)
     
