@@ -5,3 +5,5 @@ conda_env: conda.yaml
 entry_points:
   main:
     command: "python test_air_quality_class.py"
+  save_air_quality_model:
+    command: "python save_air_quality_model.py"

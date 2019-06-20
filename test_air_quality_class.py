@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 
 # module_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '/my_modelsjj/air_quality')
-module_path = './my_models/air_quality'
+module_path = './my_models/code/air_quality'
 
 print(module_path)
 
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     np.random.seed(0)
 
     # Read the wine-quality csv file (make sure you're running this from the root of MLflow!)
-    measurements_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "air_temperature_humidity.csv")
+    measurements_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "air_temperature_humidity.csv")
     data = pd.read_csv(measurements_path)
 
 #     print(data.columns)
